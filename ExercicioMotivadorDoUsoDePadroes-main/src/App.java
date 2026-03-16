@@ -2,6 +2,10 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Carro basico = new Carro("Basico", TipoCombustivel.GASOLINA, 10, 55);
+        Carro mustang = new Carro("Esportivo", TipoCombustivel.GASOLINA, 6, 45);
+        Carro van = new Carro("Utilitario", TipoCombustivel.DIESEL, 5, 70);
+        
+
 
         System.out.println("Tipos de veiculos:");
         System.out.println(basico);
