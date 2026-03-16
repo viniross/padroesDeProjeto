@@ -1,13 +1,15 @@
 public class TanqueCombustivel {
 
     private TipoCombustivel tipoCombustivel;
+    private TipoTanque tipoTanque;
     private int capacidade;
     private int combustivelDisponivel;
 
-    public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade) {
+    public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade, TipoTanque tipoTanque) {
         this.tipoCombustivel = tipoCombustivel;
         this.capacidade = capacidade;
         this.combustivelDisponivel = 0;
+        this.tipoTanque = tipoTanque;
     }
 
     public TipoCombustivel getTipoCombustivel() {

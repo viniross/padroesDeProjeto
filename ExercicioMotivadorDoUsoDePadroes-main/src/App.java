@@ -1,10 +1,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Carro basico = new Carro("Basico", TipoCombustivel.GASOLINA, 10, 55);
-        Carro mustang = new Carro("Esportivo", TipoCombustivel.GASOLINA, 6, 45);
-        Carro van = new Carro("Utilitario", TipoCombustivel.DIESEL, 5, 70);
+        Carro basico = new Carro("Basico", TipoCombustivel.GASOLINA, 10, 55, TipoTanque.DUPLA);
+        Carro mustang = new Carro("Esportivo", TipoCombustivel.GASOLINA, 6, 45, TipoTanque.DUPLA);
+        Carro van = new Carro("Utilitario", TipoCombustivel.DIESEL, 5, 70, TipoTanque.DUPLA);
+        Carro haval = new Carro("SUV", TipoCombustivel.GASOLINA, 8, 55, TipoTanque.FLEX);
         
+
 
 
         System.out.println("Tipos de veiculos:");
