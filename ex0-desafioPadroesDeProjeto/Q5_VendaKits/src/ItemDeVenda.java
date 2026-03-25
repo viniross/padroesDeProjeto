@@ -1,13 +1,13 @@
 public class ItemDeVenda {
-    private Produto produto;
+    private Item produto;
     private int quantidade;
 
-    public ItemDeVenda(Produto produto, int quantidade) {
+    public ItemDeVenda(Item produto, int quantidade) {
         this.produto = produto;
         this.quantidade = quantidade;
     }
 
-    public Produto getProduto() {
+    public Item getProduto() {
         return produto;
     }
 

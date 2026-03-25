@@ -4,13 +4,23 @@ import java.util.Collections;
 import java.util.List;
 
 public class VendasEmMemoria implements VendasFachada{
-	private List<Produto> produtos;
+	private List<Item> produtos;
 	
 	public VendasEmMemoria() {
 		produtos = new ArrayList<>();
-		produtos.add(new Produto(1, "Caneta", 1.55));
-		produtos.add(new Produto(2, "Borracha", 1.15));
-		produtos.add(new Produto(3, "Caderno", 32.99));
+		ProdutoSimples caneta = new ProdutoSimples("Caneta", 1, 1.55);
+		ProdutoSimples borracha = new ProdutoSimples("Borracha", 2, 1.15);
+		ProdutoSimples caderno = new ProdutoSimples("Caderno", 3, 32.99);
+
+		ProdutoComposto kitEscolar = new ProdutoComposto("Kit Escolar", 10);
+		kitEscolar.adicionarItem(caneta);
+		kitEscolar.adicionarItem(borracha);
+		kitEscolar.adicionarItem(caderno);
+
+		produtos.add(caneta);
+		produtos.add(borracha);
+		produtos.add(caderno);
+		produtos.add(kitEscolar);
 	}
 	
 	@Override
@@ -20,7 +30,7 @@ public class VendasEmMemoria implements VendasFachada{
 
 	@Override
 	public void registrarVenda(Venda umaVenda, int codigoProduto, int quantidade) {
-		Produto prod = produtos.stream().filter(p -> p.getId() == codigoProduto).findFirst().get();
+		Item prod = produtos.stream().filter(p -> p.getId() == codigoProduto).findFirst().get();
 		umaVenda.registrarVenda(prod, quantidade);
 	}
 
@@ -30,7 +40,7 @@ public class VendasEmMemoria implements VendasFachada{
 	}
 
 	@Override
-	public List<Produto> buscarProdutos() {
+	public List<Item> buscarProdutos() {
 		return Collections.unmodifiableList(produtos);
 	}
 
