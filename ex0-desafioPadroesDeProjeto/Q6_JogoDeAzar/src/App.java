@@ -1,7 +1,8 @@
 public class App {
     public static void main(String[] args) {
-        Dado d6 = new Dado(6);
-        Dado d20 = new Dado(20);
+        Dado d6 = DadoFactory.criar("d6"
+        Dado d20 = DadoFactory.criar("d20")
+        )
         d6.rolar();
         d20.rolar();
         System.out.println("D6: " + d6.getValor());
